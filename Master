@@ -1,0 +1,61 @@
+/**
+ * @(#)DerivativeCalculator.java
+ * @author Alex Moorman
+ * @version 1.0 2016/06/20 9:00 AM
+ * 
+ * PROGRAM PURPOSE: This is the draft of DerivativeCalculator written before I knew how to write multiple methods. 
+ * 
+ */
+
+import java.util.Scanner;
+
+public class DerivativeCalculator
+{
+  public static void main (String[]args){
+    
+    char question = ' ';
+    Scanner input = new Scanner(System.in);
+    int counter = 0;
+    double coefficient;
+    char variable = ' ';
+    double exponent;
+    double answer = 0.0;
+    double constant= 0.0;
+    
+    System.out.printf("%nWELCOME TO ALEX'S DERIVATIVE CALCULATOR!%n"
+                        + "This program will ask you a series of questions to "
+                        + "determine how to solve the problem.%n%n"
+                        + "Are you trying to determine the derivative of a simple equation like"
+                        + " 4x^2 + 1 or 10x^2 %n"
+                        + "Enter \"y\" or \"n\"");
+   question = input.nextLine().charAt(0);
+    
+    if (Character.toUpperCase(question) == 'Y'){
+     
+    {//Formula for solving all derivatives. Will probably need to be reused.
+      System.out.printf("What is the coefficient? %n");
+      coefficient = input.nextDouble();
+      input.nextLine();
+      System.out.printf("What letter is the variable? %n");
+      variable = input.nextLine().charAt(0);
+      System.out.printf("What is the value of the exponent?");
+      exponent = input.nextDouble();
+      System.out.printf("What is the constant in the equation? If none enter 0%n");
+      constant = input.nextDouble();
+      System.out.printf("%nThe derivative of %.2f%c^%.2f + %.2f is "
+                          + "%.2f%c^%.1f", coefficient, variable, exponent, constant, coefficient*exponent, variable, exponent-1.0);
+    }//END IF for Simple Derivative calculations.
+    //else {
+     // System.out.printf("Would you like to apply the chain rule or the power rule?"
+                       //+ "Enter \"c\" for chain rule or \"p\" for power rule.");
+      //question = input.nextLine().charAt(0);
+      //if (Character.toUpperCase (question) == 'C'){
+        //Questions about the chain rule
+      //}
+      //if (Character.toUpperCase(question) == 'P'){
+        //Questions for the power rule.
+      //}
+    }//END ELSE STATEMENT
+    
+  }//END MAIN
+}//END CLASS
